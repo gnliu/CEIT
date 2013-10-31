@@ -75,7 +75,6 @@ def expectedInfection(imSet,pG,sability):
             pIG.remove_node(i)
     cc = BFSGraph(pIG)
     x = 0  #counter
-    print 'max,',[len(cci) for cci in cc][0:100]
     for i in range(0,1):
         for v in cc[i].nodes():
             reducedProb = {}
@@ -240,7 +239,7 @@ if __name__=="__main__":
 	imm_size = int(sys.argv[2])
 	diffu_prop = float(sys.argv[3])
 	
-	imset = imNodes(imm_size,diffu_prop,5,G,graph_name)
+	imset = imNodes(imm_size,diffu_prop,100,G,graph_name)
 	print 'Immunizaiton targets generated! Find them in immunization_set/%s_%d_immset.txt'%(graph_name,imm_size)
 	print '============Now infection simulations with the immunization targets==========='
 	# import propagation and test the diffusion
